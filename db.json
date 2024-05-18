@@ -4,6 +4,36 @@
       "id": 1,
       "name": "Andro",
       "age": 22
+    },
+    {
+      "name": "Hari Bahadur",
+      "age": 30,
+      "id": 2
+    },
+    {
+      "name": "Hari Bahadur",
+      "age": 30,
+      "id": 3
+    },
+    {
+      "name": "Hari Bahadur",
+      "age": 30,
+      "id": 4
+    },
+    {
+      "name": "Hari Bahadur",
+      "age": 30,
+      "id": 5
+    },
+    {
+      "name": "Hari Bahadur",
+      "age": 30,
+      "id": 6
+    },
+    {
+      "name": "Hari Bahadur",
+      "age": 30,
+      "id": 7
     }
   ]
 }

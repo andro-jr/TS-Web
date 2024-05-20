@@ -8,7 +8,7 @@ export class Sync<T extends HasId> {
   constructor(public rootUrl: string) {}
 
   fetch(id: number): AxiosPromise {
-    return axios.get(`${this.rootUrl}/${id}`);
+    return axios.get(`${this.rootUrl}/users/${id}`);
   }
 
   save(data: T): AxiosPromise {

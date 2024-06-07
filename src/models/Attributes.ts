@@ -1,5 +1,3 @@
-import { UserProps } from "./User";
-
 export class Attributes<T extends object> {
   constructor(private data: T) {}
 

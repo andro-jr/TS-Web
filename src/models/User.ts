@@ -12,7 +12,7 @@ export interface UserProps {
 const rootUrl = "http://localhost:3000";
 
 export class User extends Model<UserProps> {
-  static buildClass(attrs: UserProps): User {
+  static buildUser(attrs: UserProps): User {
     return new User(
       new Attributes<UserProps>(attrs),
       new Eventing(),

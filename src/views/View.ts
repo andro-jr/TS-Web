@@ -1,6 +1,8 @@
 import { Model, hasId } from "../models/Model";
 
 export abstract class View<T extends Model<K>, K extends hasId> {
+  regions: { [key: string]: Element } = {};
+
   constructor(public parent: Element, public model: T) {
     this.bindModel();
   }
@@ -16,6 +18,10 @@ export abstract class View<T extends Model<K>, K extends hasId> {
     return {};
   }
 
+  regionsMap(): { [key: string]: string } {
+    return {};
+  }
+
   bindEvents(fragment: DocumentFragment): void {
     const eventsMap = this.eventsMap();
 
@@ -28,6 +34,17 @@ export abstract class View<T extends Model<K>, K extends hasId> {
     }
   }
 
+  mapRegions(fragment: DocumentFragment): void {
+    const regionsMap = this.regionsMap();
+
+    for (let regionKey in regionsMap) {
+      const selector = regionsMap[regionKey];
+      const element = fragment.querySelector(selector);
+
+      element && (this.regions[regionKey] = element);
+    }
+  }
+
   render(): void {
     this.parent.innerHTML = "";
 
@@ -35,6 +52,7 @@ export abstract class View<T extends Model<K>, K extends hasId> {
     templateElement.innerHTML = this.template;
 
     this.bindEvents(templateElement.content);
+    this.mapRegions(templateElement.content);
 
     this.parent.append(templateElement.content);
   }

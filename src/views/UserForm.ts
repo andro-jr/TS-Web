@@ -4,9 +4,20 @@ export class UserForm {
   get template(): string {
     return `
             <div>
-                <h1>Test</h1>
+                <h1>User Form</h1>
                 <input />
+                <button>Submit</button>
             </div>`;
+  }
+
+  eventsMap(): { [key: string]: () => void } {
+    return {
+      "click:button": this.onButtonClick,
+    };
+  }
+
+  onButtonClick(): void {
+    console.log("Hi there");
   }
 
   render(): void {

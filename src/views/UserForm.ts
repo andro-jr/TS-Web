@@ -6,8 +6,6 @@ export class UserForm extends View<User, UserProps> {
     return `
             <div>
                 <h1>User Form</h1>
-                <div>User Name: ${this.model.get("name")}</div>
-                <div>User Age: ${this.model.get("age")}</div>
                 <input />
                 <button class="set-name">Change Name</button>
                 <button class="set-age">Set Random Age</button>
